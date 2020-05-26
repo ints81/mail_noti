@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-setup(name='mail_noti',
+setup(name='mailnoti',
       version='0.1',
       url='https://github.com/yellowfang/mail_noti.git',
       license='MIT',

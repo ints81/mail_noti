@@ -7,7 +7,6 @@ import pickle
 
 
 class MailNoti:
-    
 
     def __init__(self):
         self.smtp = smtplib.SMTP('smtp.gmail.com', 587)
@@ -21,8 +20,9 @@ class MailNoti:
         }
 
     def login(self, sender_addr, pw):
-        self.sender_addr = sender_addr
+        pw = pickle.load(open('pw.pickle', 'rb'))
 
+        self.sender_addr = sender_addr
         self.smtp.login(sender_addr, pw)
 
     def _make_msg(self, to_addr, title, contents, attachment=None):
@@ -61,9 +61,6 @@ class MailNoti:
 
 
 if __name__ == '__main__':
-    sender_addr = 'shie44167@gmail.com'
-    pw = pickle.load(open('pw.pickle', 'rb'))
-
     mail_noti = MailNoti()
     mail_noti.login(sender_addr, pw)
 
