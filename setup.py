@@ -1,4 +1,4 @@
-from setuptools import setup, find_package
+from setuptools import setup, find_packages
 
 setup(name='mail_noti',
       version='0.1',
